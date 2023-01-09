@@ -25,6 +25,10 @@ const Terminal = () => {
             cmd: "vicky",
             out: "Vicky is sleeping."
         },
+        {
+            cmd: "rishab",
+            out: "Command out of range."
+        },
     ])
 
     const [input, setInput] = useState("");
