@@ -21,6 +21,10 @@ const Terminal = () => {
             cmd: "git",
             out: "Git command not found."
         },
+        {
+            cmd: "vicky",
+            out: "Vicky is sleeping."
+        },
     ])
 
     const [input, setInput] = useState("");
