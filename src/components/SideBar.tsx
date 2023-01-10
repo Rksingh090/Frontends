@@ -1,14 +1,18 @@
 import React, { useContext, useState } from 'react'
-import {  FiSun } from 'react-icons/fi'
+import { FiSun } from 'react-icons/fi'
 import { AiOutlineHome, AiOutlineInfoCircle, AiOutlineSearch } from 'react-icons/ai'
 import { ThemeContext } from '../Context'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { GoTerminal } from 'react-icons/go'
+import { RiLoginCircleLine } from 'react-icons/ri'
 
 interface ISidebar {
     show: boolean
 }
 
 const SideBar = ({ show }: ISidebar) => {
+
+    const navigate = useNavigate();
 
     const themeCtx = useContext(ThemeContext);
     const [showSearch, setShowSearch] = useState<boolean>(false);
@@ -42,8 +46,18 @@ const SideBar = ({ show }: ISidebar) => {
                     </button>
                 </li>
                 <li>
+                    <button onClick={() => navigate('/terminal')}>
+                        <GoTerminal size={18} />
+                    </button>
+                </li>
+                <li>
                     <button onClick={() => themeCtx.toggleTheme()}>
                         <FiSun size={18} />
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => navigate('/login')}>
+                        <RiLoginCircleLine size={18} />
                     </button>
                 </li>
             </ul>

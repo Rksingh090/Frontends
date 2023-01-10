@@ -3,7 +3,12 @@ import Base from './components/Base';
 
 const Terminal = () => {
     const inputRef = useRef<HTMLInputElement | any>();
-    const [commandHistory, setCommandHistory] = useState<Array<any>>([]);
+    
+    const [commandHistory, setCommandHistory] = useState<Array<any>>([{
+        cmd: "Vicky",
+        out: "Hello "
+    }]);
+
     const [commandList, setCommandList] = useState([
         {
             cmd: "ls",
